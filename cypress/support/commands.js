@@ -13,20 +13,17 @@
 // Cypress.Commands.add('login', (email, password) => { ... })
 //
 
-//we assigned a name of our command ('selectProduct') in which we wil give instructions for that command to handle the logic (passed the product name so it will click on the add to cart button)
-//productName - parameter that I passed to my product
-//this command accepts an argument called productName. The productName whatever you pass from your test will come into this command and you will replace it with your Blackberry
-Cypress.Commands.add('selectProduct', (productName) => {
-  cy.get('h4.card-title').each(($el, index, $list) => {
-    if ($el.text().includes(productName)) {
-      cy.get('button.btn.btn-info').eq(index).click()
-    }
 
 
-  })
+Cypress.Commands.add('ClickStart', () => {
+  cy.get('.text-right > .btn').click()
 })
 
 Cypress.Commands.add('ClickNext', () => {
+  cy.get('.text-right > .btn').click()
+})
+
+Cypress.Commands.add('ClickSeeResult', () => {
   cy.get('.text-right > .btn').click()
 })
 
@@ -43,6 +40,32 @@ Cypress.Commands.add('NthHeaderAssert', (index, text, percent) => {
   header.should('include.text', text)
   header.children().eq(0).should('include.text', percent + '%')
 })
+
+Cypress.Commands.add('FillInPersonalInformations', () => {
+  cy.get('#name').type('Petronela Adamcova')
+  cy.get('#mailAddress').type('petronela.adamcova@betterask.erni')
+  cy.get('#company').type('ERNI Schweiz AG')
+  cy.get('#phone').type('+41765356089')
+})
+
+Cypress.Commands.add('CheckOption', (i) => {
+  cy.get('label[for="' + i.toString() + '"]').click()
+})
+
+Cypress.Commands.add('VerifyCheckbox', (i) => {
+  cy.get('label[for="' + i.toString() + '"]').children().eq(0).children().eq(0).should("have.attr", "data-icon", "check-square")
+})
+
+Cypress.Commands.add('VerifyCheckCircle', (i) => {
+  cy.get('label[for="' + i.toString() + '"]').children().eq(0).children().eq(0).should("have.attr", "data-icon", "check-circle")
+})
+
+Cypress.Commands.add('VerifyCircle', (i) => {
+  cy.get('label[for="' + i.toString() + '"]').children().eq(0).children().eq(0).should("have.attr", "data-icon", "circle")
+})
+
+
+
 
 
 //

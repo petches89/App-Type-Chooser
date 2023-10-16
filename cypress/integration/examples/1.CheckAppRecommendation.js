@@ -7,20 +7,24 @@ describe('App Chooser Test', () =>
     {
 
     cy.visit("https://betterask.erni/apptype-chooser/")
-    cy.get(".btn").click()
-    cy.get(':nth-child(1) > .form-check-label').click()
-    cy.ClickNext()
+    cy.ClickStart()
+
+    // cy.get(':nth-child(1) > .form-check-label').click()
+    // cy.ClickNext()
     
-    for(var i=0;i<10;i++){
+    for(var i=0;i<11;i++){
     cy.SelectFirst()
     cy.ClickNext()
     }
 
-    cy.get('#name').type('Petronela')
-    cy.get('#mailAddress').type('test@gmail.com')
-    cy.get('#company').type('TestingGmbH')
-    cy.get('#phone').type('+41765356089')
+    // cy.get('#name').type('Petronela')
+    // cy.get('#mailAddress').type('test@gmail.com')
+    // cy.get('#company').type('TestingGmbH')
+    // cy.get('#phone').type('+41765356089')
+    
+    cy.FillInPersonalInformations()
     cy.ClickNext()
+
     
     
     // var header=cy.NthHeader(1);
