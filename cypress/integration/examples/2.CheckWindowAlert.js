@@ -1,6 +1,7 @@
 /// <reference types="Cypress" />
 
 describe('App Chooser Test', () => {
+  
   it('Test 1', () => {
 
     cy.visit("https://betterask.erni/apptype-chooser/")
@@ -20,7 +21,5 @@ describe('App Chooser Test', () => {
     cy.on('window:alert', (str) => {
       expect(str).to.equal('Please answer at least 6 questions to get a meaningful result.')
     })
-
-
   })
 })
