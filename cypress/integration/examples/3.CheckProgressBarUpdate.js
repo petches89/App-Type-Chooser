@@ -2,9 +2,9 @@
 
 describe('App Chooser Test', () => {
 
-  it('Test 1', () => {
+  it('WhenClickingNext_ProgressBarUpdates', () => {
 
-    cy.visit("https://betterask.erni/apptype-chooser/")
+    cy.visit("/")
 
     cy.ClickStart()
 

@@ -2,9 +2,9 @@
 
 describe('App Chooser Test', () => {
 
-  it('Test 1', () => {
+  it('OnlyOneRadioButtonCanBeSelectedSimultaneously', () => {
 
-    cy.visit("https://betterask.erni/apptype-chooser/")
+    cy.visit("/")
     cy.ClickStart()
 
     cy.CheckOption(1)

@@ -2,9 +2,9 @@
 
 describe('App Chooser Test', () => {
 
-  it('Test 1', () => {
+  it('PersonalInformationMissing_ValidationMessagesAreShown', () => {
 
-    cy.visit("https://betterask.erni/apptype-chooser/")
+    cy.visit("/")
     cy.ClickStart()
 
     for (var i = 0; i < 11; i++) {
